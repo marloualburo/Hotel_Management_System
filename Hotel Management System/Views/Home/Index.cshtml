@@ -1,80 +1,136 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ViewData["Title"]</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuxus Hotel - Rooms</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #800080;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+
+        .room-section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+            .room-section img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+        .btn-primary {
+            background-color: #800080;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #6a006a;
+            }
+    </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Nuxus Hotel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-   <h2> Welcome to Nuxus Hotel</h2>
-   <h3> Dear Guest, Please book now. Please see the rooms below before booking</h3>
+    <div class="container">
+        <h1 class="text-center my-4">Welcome to Nuxus Hotel</h1>
+        <p class="text-center">Dear Guest, please explore our rooms and book your stay.</p>
 
-   <div class ="myDiv">
-       <img src="/images/hotel.jpg" alt="Jane">
-   </div>
+        <div class="room-section">
+            <h2>Deluxe Rooms</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/images/DeluxRoom1.jpg" alt="Deluxe 1 Room">
+                    <h3>Deluxe 1 Room</h3>
+                    <p>Spacious room with a king-sized bed and a beautiful view.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+                <div class="col-md-4">
+                    <img src="/images/delux2.jpg.jpg" alt="Deluxe 2 Room">
+                    <h3>Deluxe 2 Room</h3>
+                    <p>Luxurious room with modern amenities and a balcony.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+                <div class="col-md-4">
+                    <img src="/images/delux2.jpg.jpg" alt="Deluxe 3 Room">
+                    <h3>Deluxe 3 Room</h3>
+                    <p>Elegant room with a jacuzzi and city view.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
 
-   <div class="card">
-       <img src="/images/delux1.jpg" alt="Jane">
-       <div class="container">
-           <h2>Deluxe Room</h2>
-           <a asp-controller="Bookings" asp-action="Create">
-                <input type="button" class="btn btn-primary" value="Book Now">
-           </a>
-       </div>
-   </div>
+        <div class="room-section">
+            <h2>Other Rooms</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/images/double2.jpg.jpg" alt="Double Room">
+                    <h3>Double Room</h3>
+                    <p>Comfortable room with two double beds.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+                <div class="col-md-4">
+                    <img src="/images/single.jpg" alt="Single Room">
+                    <h3>Single Room</h3>
+                    <p>Cozy room with a single bed, perfect for solo travelers.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+                <div class="col-md-4">
+                    <img src="/images/standard.jpg" alt="Standard Room">
+                    <h3>Standard Room</h3>
+                    <p>Affordable room with all basic amenities.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
 
-    <div class="card">
-        <img src="/images/delux2.jpg.jpg" alt="Jane">
-        <div class="container">
-            <h2>Deluxe Room</h2>
-            <a asp-controller="Bookings" asp-action="Create">
-                <input type="button" class="btn btn-primary" value="Book Now">
-            </a>
+        <div class="room-section">
+            <h2>Triple Room</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/images/triple.jpg" alt="Triple Room">
+                    <h3>Triple Room</h3>
+                    <p>Large room with three beds, ideal for families.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="card">
-       <img src="/images/double.jpg" alt="Jane">
-       <div class="container">
-           <h2>Deluxe Room</h2>
-           <a asp-controller="Bookings" asp-action="Create">
-                <input type="button" class="btn btn-primary" value="Book Now">
-           </a>
-       </div>
-   </div>
-
-    <div class="card">
-        <img src="/images/single.jpg" alt="Jane">
-        <div class="container">
-            <h2>Deluxe Room</h2>
-            <a asp-controller="Bookings" asp-action="Create">
-                <input type="button" class="btn btn-primary" value="Book Now">
-            </a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="/images/standard.jpg" alt="Jane">
-        <div class="container">
-            <h2>Deluxe Room</h2>
-            <a asp-controller="Bookings" asp-action="Create">
-                <input type="button" class="btn btn-primary" value="Book Now">
-            </a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="/images/triple.jpg" alt="Jane">
-        <div class="container">
-            <h2>Deluxe Room</h2>
-            <a asp-controller="Bookings" asp-action="Create">
-                <input type="button" class="btn btn-primary" value="Book Now">
-            </a>
-        </div>
-    </div>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
