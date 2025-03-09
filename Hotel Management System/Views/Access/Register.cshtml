@@ -1,5 +1,4 @@
-﻿
-@model Hotel_Management_System.Models.VMLogin;
+﻿@model Hotel_Management_System.Models.User
 
 @{
     Layout = null;
@@ -104,23 +103,30 @@
             <div class="hotel-name">Nuxus Hotel</div> <!-- Replace with your hotel name -->
         </div>
 
-        <!-- Login Form -->
-        @using (Html.BeginForm("Login", "Access", FormMethod.Post))
+        <!-- Register Form -->
+        @using (Html.BeginForm("Register", "Access", FormMethod.Post))
         {
-           
             <div class="form-group">
-                <label for="username">Email:</label>
-                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Enter your email", @required = true })
+                <label for="FirstName">First Name:</label>
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "Enter your first name", required = "required" })
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
-                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Enter your password", @required = true })
+                <label for="LastName">Last Name:</label>
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Enter your last name", required = "required" })
             </div>
             <div class="form-group">
-                <input type="submit" name="submit" class="btn btn-info" value="Login">
+                <label for="Email">Email:</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Enter your email", required = "required", type = "email" })
+            </div>
+            <div class="form-group">
+                <label for="PasswordHash">Password:</label>
+                @Html.PasswordFor(m => m.PasswordHash, new { @class = "form-control", @placeholder = "Enter your password", required = "required" })
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit" class="btn btn-info" value="Register">
             </div>
 
-            <p>Don't have an account? <a href="@Url.Action("Register", "Access")">Register first</a>.</p>
+            <p>Already have an account? <a href="@Url.Action("Login", "Access")">Login here</a>.</p>
             @if (ViewData["ValidateMessage"] != null)
             {
                 <div class="error-message">

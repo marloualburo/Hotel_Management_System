@@ -1,9 +1,14 @@
-﻿namespace Hotel_Management_System.Models
-{
-    public class VMLogin
-    {
-        public string Email { get; set; }
+﻿namespace Hotel_Management_System.Models;
+using System.ComponentModel.DataAnnotations;
 
-        public string Password { get; set; }
-    }
+public class VMLogin
+{
+    [Required, EmailAddress]
+    public required string Email { get; set; }
+
+    [Required, DataType(DataType.Password)]
+    public required string Password { get; set; }
+
+    [Display(Name = "Remember Me")]
+    public bool RememberMe { get; set; }
 }
